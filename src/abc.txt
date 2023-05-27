@@ -1,0 +1,31 @@
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import UniversityList1 from './UniversityList1';
+import FavoriteUniversity from './FavoriteUniversity';
+import './App.css'
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">University List</Link>
+              </li>
+              <li>
+                <Link to="/favorites">Favorite Universities</Link>
+              </li>
+            </ul>
+          </nav>
+          <Routes>
+            <Route exact path="/" component={UniversityList1} />
+            <Route path="/favorites" component={FavoriteUniversity} />
+          </Routes>
+        </div>
+      </Router>
+    );
+  }
+}
+
+export default App;
